@@ -27,6 +27,7 @@ class Header extends Component {
     const { user, loading } = this.state;
     return (
       <header data-testid="header-component">
+        { loading ? <Loading /> : <p data-testid="header-user-name">{ user }</p> }
         <nav>
           <ul>
             <li>
@@ -40,7 +41,6 @@ class Header extends Component {
             </li>
           </ul>
         </nav>
-        { loading ? <Loading /> : <p data-testid="header-user-name">{ user }</p> }
       </header>
     );
   }
