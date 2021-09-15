@@ -38,19 +38,22 @@ class Login extends Component {
     const MIN_LENGTH = 3;
     return (
       <>
-        <h1>Login</h1>
-        <form>
+        <h1 className="display-4">Login</h1>
+        <form className="container">
           <label htmlFor="input-name">
             <input
+              className="form-control m-2"
               id="input-name"
               name="name"
               value={ name }
               onChange={ this.handleChangeInput }
               data-testid="login-name-input"
               type="text"
+              placeholder="Ex: João"
             />
           </label>
           <button
+            className="btn btn-success m-3"
             type="button"
             data-testid="login-submit-button"
             onClick={ this.logar }
