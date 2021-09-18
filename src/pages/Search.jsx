@@ -73,7 +73,7 @@ class Search extends Component {
     const MIN_LENGTH = 2;
     const VALIDADTION = search.length < MIN_LENGTH;
     return (
-      <div className="container" data-testid="page-search">
+      <section data-testid="page-search">
         <Header />
         <h1>Search</h1>
         <input
@@ -97,7 +97,7 @@ class Search extends Component {
           { result && this.showResult() }
         </p>
         { loading ? <Loading /> : this.showAlbuns() }
-      </div>
+      </section>
     );
   }
 

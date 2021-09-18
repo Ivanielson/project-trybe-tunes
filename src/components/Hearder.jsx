@@ -28,16 +28,34 @@ class Header extends Component {
     return (
       <header data-testid="header-component">
         { loading ? <Loading /> : <p data-testid="header-user-name">{ user }</p> }
-        <nav>
-          <ul>
-            <li>
-              <Link data-testid="link-to-search" to="/search">Search</Link>
+        <nav className="mb-5">
+          <ul className="nav nav-tabs">
+            <li className="nav-item">
+              <Link
+                className="nav-link text-success"
+                data-testid="link-to-search"
+                to="/search"
+              >
+                Search
+              </Link>
             </li>
-            <li>
-              <Link data-testid="link-to-favorites" to="/favorites">Favorites</Link>
+            <li className="nav-item">
+              <Link
+                className="nav-link text-success"
+                data-testid="link-to-favorites"
+                to="/favorites"
+              >
+                Favorites
+              </Link>
             </li>
-            <li>
-              <Link data-testid="link-to-profile" to="/profile">Profile</Link>
+            <li className="nav-item">
+              <Link
+                className="nav-link text-success"
+                data-testid="link-to-profile"
+                to="/profile"
+              >
+                Profile
+              </Link>
             </li>
           </ul>
         </nav>

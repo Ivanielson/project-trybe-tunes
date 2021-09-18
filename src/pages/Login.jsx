@@ -37,32 +37,34 @@ class Login extends Component {
     const { user: { name } } = this.state;
     const MIN_LENGTH = 3;
     return (
-      <>
-        <h1 className="display-4">Login</h1>
-        <form className="container">
-          <label htmlFor="input-name">
-            <input
-              className="form-control m-2"
-              id="input-name"
-              name="name"
-              value={ name }
-              onChange={ this.handleChangeInput }
-              data-testid="login-name-input"
-              type="text"
-              placeholder="Ex: João"
-            />
-          </label>
-          <button
-            className="btn btn-success m-3"
-            type="button"
-            data-testid="login-submit-button"
-            onClick={ this.logar }
-            disabled={ name.length < MIN_LENGTH }
-          >
-            Entrar
-          </button>
-        </form>
-      </>
+      <section className="position-absolute top-50 start-50 translate-middle">
+        <h1 className="text-center mb-5">Logar</h1>
+        <div className="shadow p-3 mb-5 bg-body rounded">
+          <form className="container">
+            <label htmlFor="input-name">
+              <input
+                className="form-control m-2"
+                id="input-name"
+                name="name"
+                value={ name }
+                onChange={ this.handleChangeInput }
+                data-testid="login-name-input"
+                type="text"
+                placeholder="Ex: João"
+              />
+            </label>
+            <button
+              className="btn btn-success m-3"
+              type="button"
+              data-testid="login-submit-button"
+              onClick={ this.logar }
+              disabled={ name.length < MIN_LENGTH }
+            >
+              Entrar
+            </button>
+          </form>
+        </div>
+      </section>
     );
   }
 

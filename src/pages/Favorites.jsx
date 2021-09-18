@@ -19,7 +19,6 @@ class Favorites extends Component {
     const songs = await getFavoriteSongs();
     const list = [...songs];
     this.setState({ songsList: [...list] });
-    console.log(songs);
   }
 
   render() {
