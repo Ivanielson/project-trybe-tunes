@@ -33,8 +33,6 @@ class MusicCard extends Component {
   loadBookmarks = async () => {
     const { musics } = this.props;
     const favoriteSounds = await getFavoriteSongs();
-    console.log(musics);
-    console.log(favoriteSounds);
     const checked = favoriteSounds.some((sound) => sound.trackId === musics.trackId);
     if (checked) {
       this.setState({ check: checked });
