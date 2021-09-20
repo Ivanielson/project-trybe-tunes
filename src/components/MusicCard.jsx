@@ -26,7 +26,7 @@ class MusicCard extends Component {
     await addSong(musics);
     this.setState({ loading: false });
     if (!checked) {
-      removeSong(musics);
+      await removeSong(musics);
     }
   }
 
@@ -37,7 +37,7 @@ class MusicCard extends Component {
     if (checked) {
       this.setState({ check: checked });
     } else {
-      removeSong(musics);
+      await removeSong(musics);
     }
   }
 

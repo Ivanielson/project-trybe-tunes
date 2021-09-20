@@ -23,11 +23,22 @@ class Header extends Component {
     }
   }
 
+  showUserLog = () => {
+    const { user } = this.state;
+    return (
+      <section className="container">
+        <p data-testid="header-user-name">
+          { user }
+        </p>
+      </section>
+    );
+  }
+
   render() {
-    const { user, loading } = this.state;
+    const { loading } = this.state;
     return (
       <header data-testid="header-component">
-        { loading ? <Loading /> : <p data-testid="header-user-name">{ user }</p> }
+        { loading ? <Loading /> : this.showUserLog() }
         <nav className="mb-5">
           <ul className="nav nav-tabs">
             <li className="nav-item">

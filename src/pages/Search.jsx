@@ -41,7 +41,7 @@ class Search extends Component {
   showAlbuns = () => {
     const { artists } = this.state;
     return (
-      <section className="row">
+      <>
         { artists.map(({ collectionId, collectionName, artworkUrl100, artistName }) => (
           <Link
             key={ collectionId }
@@ -56,16 +56,46 @@ class Search extends Component {
             />
           </Link>
         )) }
-      </section>
+      </>
     );
   }
 
   showResult = () => {
     const { returnRequest, artists } = this.state;
     if (artists.length > 0) {
-      return `Resultado de álbuns de: ${returnRequest}`;
+      return (
+        <div className="alert alert-success d-flex align-items-center m-2">
+          <svg
+            className="bi flex-shrink-0 me-2"
+            width="10"
+            height="10"
+            role="img"
+            aria-label="Info:"
+          >
+            <use xlinkHref="#info-fill" />
+          </svg>
+          <div>
+            { `Resultado de álbuns de: ${returnRequest}` }
+          </div>
+        </div>
+      );
     }
-    return 'Nenhum álbum foi encontrado';
+    return (
+      <div className="alert alert-danger d-flex align-items-center m-2">
+        <svg
+          className="bi flex-shrink-0 me-2"
+          width="10"
+          height="10"
+          role="img"
+          aria-label="Info:"
+        >
+          <use xlinkHref="#info-fill" />
+        </svg>
+        <div>
+          Nenhum álbum foi encontrado
+        </div>
+      </div>
+    );
   }
 
   showSearch = () => {
@@ -73,31 +103,34 @@ class Search extends Component {
     const MIN_LENGTH = 2;
     const VALIDADTION = search.length < MIN_LENGTH;
     return (
-      <section data-testid="page-search">
+      <main data-testid="page-search">
         <Header />
-        <h1>Search</h1>
-        <input
-          name="search"
-          value={ search }
-          className="form-control m-2 w-50"
-          data-testid="search-artist-input"
-          placeholder="Nome do artista"
-          onChange={ this.handleChangeInput }
-        />
-        <button
-          className="btn btn-success m-2"
-          data-testid="search-artist-button"
-          type="button"
-          disabled={ VALIDADTION }
-          onClick={ this.getArtista }
-        >
-          Procurar
-        </button>
-        <p>
+        <section className="d-flex flex-wrap justify-content-center">
+          <input
+            name="search"
+            value={ search }
+            className="form-control m-2 w-50"
+            data-testid="search-artist-input"
+            placeholder="Nome do artista"
+            onChange={ this.handleChangeInput }
+          />
+          <button
+            className="btn btn-success m-2"
+            data-testid="search-artist-button"
+            type="button"
+            disabled={ VALIDADTION }
+            onClick={ this.getArtista }
+          >
+            Procurar
+          </button>
+        </section>
+        <section>
           { result && this.showResult() }
-        </p>
-        { loading ? <Loading /> : this.showAlbuns() }
-      </section>
+          <section className="d-flex flex-wrap justify-content-between">
+            { loading ? <Loading /> : this.showAlbuns() }
+          </section>
+        </section>
+      </main>
     );
   }
 

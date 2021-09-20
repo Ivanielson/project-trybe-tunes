@@ -5,17 +5,22 @@ class Artista extends Component {
   render() {
     const { collection, pathImg, artistName } = this.props;
     return (
-      <div className="card" Style="width: 12rem">
-        <img
-          src={ pathImg }
-          className="card-img-top"
-          alt={ `Imagem do Album ${collection}` }
-        />
-        <div className="card-body">
-          <p className="card-text">{ collection }</p>
-          <p className="card-text">{ artistName }</p>
+      <section className="card-albuns">
+        <div
+          className="card bg-light shadow p-2 mb-4 rounded"
+          Style="width: 14rem; height: 24rem;"
+        >
+          <img
+            className="card-img-top"
+            src={ pathImg }
+            alt={ `Imagem do Album ${collection}` }
+          />
+          <div className="card-body text-center">
+            <p className="card-text lead">{ collection }</p>
+            <p className="card-text">{ artistName }</p>
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 }
