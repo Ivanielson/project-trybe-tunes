@@ -26,8 +26,8 @@ class Header extends Component {
   showUserLog = () => {
     const { user } = this.state;
     return (
-      <section className="container">
-        <p data-testid="header-user-name">
+      <section className="container text-end bg-success opacity-75 mt-2 rounded">
+        <p className="text-white p-1" data-testid="header-user-name">
           { user }
         </p>
       </section>

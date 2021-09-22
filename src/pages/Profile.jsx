@@ -24,32 +24,32 @@ class Profile extends Component {
   }
 
   showProfile = () => {
-    const { user } = this.state;
+    const { user: { name, image, email, description } } = this.state;
     return (
       <div data-testid="page-profile">
         <Header />
         <section
-          className="card p-2 position-absolute top-50 start-50 translate-middle"
-          Style="width: 25rem"
+          className="card m-4"
+          Style="width: 18rem"
         >
           <img
             className="card-img-top"
             data-testid="profile-image"
-            src={ user.image }
-            alt={ `Imagem de perfil do usuário ${user.name}` }
+            src={ image }
+            alt={ `Imagem de perfil do usuário ${name}` }
           />
           <div className="card-body">
             <p className="card-text">
-              { `Nome ${user.name}` }
+              { name }
             </p>
             <p className="card-text">
-              { `E-mail ${user.email}` }
+              { email }
             </p>
             <p className="card-text">
-              { `Descrição ${user.description}` }
+              { description }
             </p>
           </div>
-          <Link className="btn btn-success" to="/profile/edit">
+          <Link className="btn btn-success w-50 m-2" to="/profile/edit">
             Editar perfil
           </Link>
         </section>
