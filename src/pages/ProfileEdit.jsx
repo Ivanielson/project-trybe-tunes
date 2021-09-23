@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 import Header from '../components/Hearder';
 import InputDefault from '../components/InputDefault';
 import Loading from '../components/Loading';
@@ -31,11 +32,9 @@ class ProfileEdit extends Component {
 
   handleChangeInputEdit = ({ target }) => {
     const { name, value } = target;
-    this.setState(() => ({
-      user: {
-        [name]: value,
-      },
-    }));
+    const { user } = this.state;
+    user[name] = value;
+    this.setState({ user });
   }
 
   saveEditProfile = async () => {
@@ -59,14 +58,16 @@ class ProfileEdit extends Component {
             description={ description }
             handleChange={ this.handleChangeInputEdit }
           />
-          <button
-            className="btn btn-success"
-            type="button"
-            data-testid="edit-button-save"
-            onClick={ this.saveEditProfile }
-          >
-            Salvar
-          </button>
+          <Link to="/profile">
+            <button
+              className="btn btn-success"
+              type="button"
+              data-testid="edit-button-save"
+              onClick={ this.saveEditProfile }
+            >
+              <i className="bi bi-save"> Salvar </i>
+            </button>
+          </Link>
         </form>
       </div>
     );

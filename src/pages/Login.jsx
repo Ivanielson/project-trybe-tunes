@@ -41,6 +41,9 @@ class Login extends Component {
         <h1 className="text-center mb-5">Logar</h1>
         <div className="shadow p-3 mb-5 bg-body rounded">
           <form className="container">
+            <h2>
+              <i className="bi bi-person-fill"> </i>
+            </h2>
             <label htmlFor="input-name">
               <input
                 className="form-control m-2"

@@ -50,7 +50,8 @@ class Profile extends Component {
             </p>
           </div>
           <Link className="btn btn-success w-50 m-2" to="/profile/edit">
-            Editar perfil
+            <i className="bi bi-pencil"> Editar perfil </i>
+
           </Link>
         </section>
       </div>

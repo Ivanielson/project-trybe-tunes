@@ -121,7 +121,7 @@ class Search extends Component {
             disabled={ VALIDADTION }
             onClick={ this.getArtista }
           >
-            Procurar
+            <i className="bi bi-search"> Procurar </i>
           </button>
         </section>
         <section>

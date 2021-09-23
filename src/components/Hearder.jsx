@@ -28,7 +28,7 @@ class Header extends Component {
     return (
       <section className="container text-end bg-success opacity-75 mt-2 rounded">
         <p className="text-white p-1" data-testid="header-user-name">
-          { user }
+          <i className="bi bi-person-circle">{ user }</i>
         </p>
       </section>
     );
