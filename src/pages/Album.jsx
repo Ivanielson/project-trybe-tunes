@@ -28,7 +28,7 @@ class Album extends Component {
       <div data-testid="page-album">
         <Header />
         { playList.map((album) => (
-          <section key={ album.collectionId }>
+          <section key={ album.collectionId } className="p-3">
             <img src={ album.artworkUrl100 } alt={ `Album ${album.collectionName}` } />
             <h2 data-testid="album-name">{album.collectionName}</h2>
             <h3 data-testid="artist-name">{album.artistName}</h3>

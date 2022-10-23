@@ -65,16 +65,8 @@ class Search extends Component {
     if (artists.length > 0) {
       return (
         <div className="alert alert-success d-flex align-items-center m-2">
-          <svg
-            className="bi flex-shrink-0 me-2"
-            width="10"
-            height="10"
-            role="img"
-            aria-label="Info:"
-          >
-            <use xlinkHref="#info-fill" />
-          </svg>
-          <div>
+          <i className="bi bi-exclamation-triangle-fill"> </i>
+          <div className=" p-1">
             { `Resultado de álbuns de: ${returnRequest}` }
           </div>
         </div>
@@ -82,16 +74,8 @@ class Search extends Component {
     }
     return (
       <div className="alert alert-danger d-flex align-items-center m-2">
-        <svg
-          className="bi flex-shrink-0 me-2"
-          width="10"
-          height="10"
-          role="img"
-          aria-label="Info:"
-        >
-          <use xlinkHref="#info-fill" />
-        </svg>
-        <div>
+        <i className="bi bi-exclamation-triangle-fill"> </i>
+        <div className=" p-1">
           Nenhum álbum foi encontrado
         </div>
       </div>

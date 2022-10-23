@@ -45,7 +45,7 @@ class MusicCard extends Component {
     const { musics } = this.props;
     const { check } = this.state;
     return (
-      <section>
+      <section className="p-4">
         <p>{ musics.trackName }</p>
         <audio data-testid="audio-component" src={ musics.previewUrl } controls>
           <track kind="captions" />
